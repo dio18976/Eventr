@@ -1,0 +1,9 @@
+.imguser{
+    border-radius: 20px;
+}
+.cards{
+    align-items: center;
+}
+.row{
+    justify-content: space-around;
+}
