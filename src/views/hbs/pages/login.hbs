@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style-login.css">
+    <title>Login</title>
+</head>
+<body >
+    <div class="container vertical-center">
+        <div class="row cont align-items-center">
+          <div class="col right-screen">
+            <div class="logo-eventr">
+                <img src="/img/Icon.png" alt="Eventr logo" width="120">
+                <img src="/img/logoEventr.png" alt="Eventr logo" width="168">
+            </div>
+            <div class="intro mt-3">
+                Bienvenido a Eventr, tu puerta de entrada a un universo de eventos inolvidables. Conéctate con experiencias culturales, musicales, deportivas y mucho más, todo en un solo lugar.
+            </div>
+          </div>
+          <div class="col">
+            <div class="col-10 formulary">
+              <form class="forms-cre pt-3" method="POST">
+                {{#if error}}
+                    <p style="color: red; margin-top: 1rem;">{{error}}</p>
+                {{/if}}
+                <div class="mt-3 col">
+                  <input name="correo" type="email" class="form-control email-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electronico" autocomplete="on" required>
+                </div>
+                <div class="col">
+                  <input name="contrasena" type="password" class="form-control pass-input" id="exampleInputPassword1" placeholder="Contraseña" autocomplete="current-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-login col-12">Iniciar sesion</button>
+                <p class="mt-4 text-center">¿No tienes cuenta? <a href="/signin" style="color:dodgerblue;">Crea una</a></p>
+              </form>
+              <div class="login-icons  text-center">
+                <img src="../img/facebook.png" alt="" class="icon">
+                <img src="../img/buscar.png" alt="" class="icon">    
+                <img src="../img/linkedin.png" alt="" class="icon">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

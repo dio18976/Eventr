@@ -1,0 +1,20 @@
+.btn-form-login{
+    background-color: #0BAAE4;
+    color: #ffffff;
+    border: none;
+    padding:0.5rem 0.6rem;
+    border-radius: 20px;
+    margin-left: 2.5rem;
+}
+nav{
+    border-bottom: 1px #1e1e1ea6 solid;
+}
+.content-right{
+    margin-left: 15rem;
+}
+.decr-event{
+    height: 150px;
+}
+div label{
+    margin-top: 1rem;
+}

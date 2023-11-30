@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signin.css">
+    <title>Registrarse eventr</title>
+</head>
+<body>
+    <div class="col-lg-6 formulary shadow p-3 mb-5 bg-body-tertiary rounded">
+        <img src="/img/eventr.png" class="logo-sign" alt="">
+        <form class="forms-cre col-lg-10" method="POST">
+            {{#if error}}
+                <p style="color: red; margin-top: 1rem;">{{error}}</p>
+            {{/if}}
+            <div class="col">
+                <input name="nombre" type="text" class="form-control email-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre" autocomplete="on" required>
+            </div>
+            <div class="col">
+                <input name="correo" type="email" class="form-control pass-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electronico" autocomplete="on" required>
+            </div>
+            <div class="col">
+                <input name="contrasena" type="password" class="form-control pass-input" id="exampleInputPassword1" placeholder="Contraseña" autocomplete="current-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-login col-12">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>

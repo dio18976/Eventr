@@ -1,8 +1,20 @@
+*{
+    margin: 0px;
+}
+a{
+    all: unset;
+    cursor: pointer;
+}
 .imguser{
     border-radius: 20px;
 }
 .cards{
     align-items: center;
+}
+.card:hover{
+    border: 1px black solid;
+    cursor: pointer;
+    
 }
 .row{
     justify-content: space-around;
@@ -15,27 +27,23 @@
     font-weight: bold;
 }
 .img-card{
-    height: 144px;
-    width: 100%;
+    height: 65%;
+    width: auto;
+    image-rendering: unset;
 }
 .card{
     --bs-card-inner-border-radius: 1rem;
     --bs-card-border-radius: 1rem;
     --bs-card-border-width: none;
+    --bs-card-spacer-x: none;
     background-color: #D9D9D9;
     height: 263px;
-}
-.formulary{
-    background-color: #ffffff;
-    align-self: center;
-    align-items: center;
-    position: relative;
-    border-radius: 10px;
-    padding-bottom: 3rem;
+    box-shadow: .5px .5px 10px 5px rgb(197, 197, 197);
 }
 .form-control{
     display: inline-block;
-    width: 66.66667%;
+    width: 100%;
+    height: 2.5rem;
 }
 .btn-login{
     margin: 0.75rem;
@@ -74,8 +82,15 @@
     height: auto;
     margin-left: 3rem;
 }
-.right-screen{
-    margin-top: 100px;
+hr{
+    width: 65%;
+}
+.navbar{
+    --bs-navbar-nav-link-padding-x: 3.5rem;
+    --bs-navbar-brand-margin-end: 2rem;
+}
+.me-auto{
+    margin-left: 3rem;
 }
 /*Continuar con la alineación de las cajas de texto
 * hacer más alta la sección del fomrulario.*/

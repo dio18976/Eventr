@@ -1,0 +1,89 @@
+*{
+    margin: 0px;
+}
+.bg-body-tertiary{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.24), rgba(255,0,0,0) 100%);
+    --bs-bg-opacity: 0;
+}
+.banner{
+    height: 350px;
+    background-image: url(/img/prueba.jpg);
+    display: block;
+    margin:auto;
+    background-size: cover;
+}
+.event-title{
+    color:beige;
+    margin-top: 3.5rem;
+    margin-left: 2rem;
+}
+.title-banner{
+    font-size: 40px;
+}
+.nav-info{
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    width:45%;
+    text-align: center;
+}
+.head-land{
+    border-bottom: 1px solid #00000000;
+}
+.head-land:hover{
+    border-bottom: 1px solid #2c2c2c;
+    transition: border-bottom 0.004s; 
+    cursor: pointer;
+}
+.selected{
+    border-bottom: 1px solid #2c2c2c;
+}
+.head-land button{
+    background-color: #fff;
+    border: none
+}
+.event-info{
+    border: 1px black solid;
+    margin: 3rem 0 2rem 2rem;
+    border-radius: 0.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+}
+.button-ticket, .button-date{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+.button-ticket{margin: 0.5rem 1.5rem 0rem 0rem;/*Arriba, derecha, abajo, izquierda*/}
+.button-date{margin: 0rem 1.5rem 0rem 0rem;/*Arriba, derecha, abajo, izquierda*/
+    background-color: white;
+}
+.btn-light{
+    background-color: white;
+    color:#0BAAE4;
+    border: solid 1px #A8A8A8;
+}
+.gallery-info{
+    margin: 2rem 1.5rem;
+}
+.gallery-pic{
+    border-radius: 10px;
+    height: 100%;
+    margin-bottom: 1rem;
+}
+.section-pic{
+    height: 13
+    rem;
+    margin-top: 1rem;
+}
+.detail-event{
+    border: solid 1px #000000;
+    margin: 2rem 0 0 2rem;
+    padding-left: 1rem;
+    width:75%;
+}
+.text-detail{
+    width: 90%;
+    text-align: justify;
+}

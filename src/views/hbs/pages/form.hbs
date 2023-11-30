@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg d-fex  align-items-cennter container-fluid  align-items-cennter">
+        <ul class="navbar-nav container-fluid my-3">
+            <li><img src="/img/icons/icon-eventr.png" alt="eventr" height="65" class="d-inline-block align-text-top"></li>
+                <li class="content-right"><span>Inicio</span></li>
+                <li><span>Acerca de</span></li>
+                <li><span>Servicios</span></li>
+                <li>Contacto</li>
+                <li><button class="btn-form-login btn">Iniciar Sesión</button></li>
+        </ul>
+    </nav>
+    <form action="http://localhost:4000/form" method="POST" enctype="multipart/form-data">
+        <article class="row">
+            <div class="col-lg-5">
+                <label class="form-label">Nombre del evento:</label>
+                <input type="text" class="form-control" name="nombreEvento" pattern="[A-Za-z]+" required>
+                <label class="form-label">Descripción del evento:</label>
+                <input type="text" class="form-control decr-event" name="descripcionEvento" required>
+                <label class="form-label">Tipo del evento:</label>
+                 <select class="form-control" id="exampleFormControlSelect1" name="tipoEvento">
+                    <option value="Cultural">Cultural</option>
+                    <option value="Deportivo">Deportivo</option>
+                    <option value="Artistico">Artístico</option>
+                    <option value="Gastronomico">Gastronomico</option>
+                    <option value="Educativo">Educativo</option>
+                    <option value="Empresarial">Empresarial</option>
+                    <option value="Religioso">Religioso</option>
+                    <option value="Politico">Politico</option>
+                </select>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <label class="form-label">Fecha:</label>
+                            <input type="date" class="form-control" name="fecha" required>
+                        </div>
+                        <div class="col-5">
+                            <label class="form-label">Hora:</label>
+                            <input type="time" class="form-control" name="hora"required>
+                        </div>
+                    </div>
+                </div>
+                <label class="form-label">Ubicación:</label>
+                <input type="text" class="form-control" name="ubicacion" required>
+            </div>
+            <div class="col-lg-5">
+                <label class="form-label">Organizador/Entidad Responsable:</label>
+                <input type="text" class="form-control"  name="nombre" pattern="[A-Za-z]+"required>
+                <!--<label class="form-label me-5">Banner del evento:</label>
+                <input type="file" class=""   name="banner" required> <br>-->
+                <label class="form-label me-4">Imagenes del evento:</label>
+                <input type="file" class=""   name="imagenes" multiple="true" required>
+                <h4 class="mt-4">Información de entradas</h4>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <label class="form-label">Categoria:</label>
+                            <input type="text" class="form-control" name="categoria" pattern="[A-Za-z]+"required>
+                        </div>
+                        <div class="col-5">
+                            <label class="form-label">Precio:</label>
+                            <input type="decimal" class="form-control" name="precio" required>
+                        </div>
+                        <div class="col-5">
+                            <label class="form-label">Capacidad:</label>
+                            <input type="number" class="form-control" name="cantidad" required>
+                        </div>
+                        <div class="col-5">
+                            <label class="form-label">Zona:</label>
+                            <input type="text" class="form-control" name="zona" required>
+                        </div>
+                    </div>
+                </div>
+                <label class="form-label">Requisitos especiales:</label>
+                <input type="text" class="form-control" name="requisitose" pattern="[A-Za-z]+"required>
+                <label class="form-label">Enlaces a Redes Sociales o Sitio Web:</label>
+                <input type="text" class="form-control" name="enlaces" required> 
+            </div>
+            <button class="col-lg-5 mt-4 btn btn-primary" type="submit">Listo!</button>
+        </article>
+    </form>
+</body>
+</html>

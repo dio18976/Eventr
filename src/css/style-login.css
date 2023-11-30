@@ -1,3 +1,21 @@
 body{
     background-color: #F0F2F5;
 }
+.forms-cre{
+    border-bottom: 1px #7A7A7A solid;
+    padding: 0rem 1.5rem 1rem 1.5rem;
+    width: 85%;
+    position: relative;
+    right: -10%;
+}
+.formulary{
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 10px;
+    padding-bottom: 3rem;
+}
+.vertical-center {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+  }
