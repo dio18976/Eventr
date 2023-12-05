@@ -2,10 +2,10 @@ const express = require('express');
 const {engine} = require('express-handlebars');
 const myconnection = require('express-myconnection');
 const bodyParser = require('body-parser');
+const multer = require('multer')
 const mysql = require('mysql');
 const tasksRoutes = require('./routes/pages');
 const app = express();
-const multer = require('multer');
 const fs = require('node:fs');
 const session = require('express-session');
 const loginRoutes = require('./routes/pages');
@@ -17,15 +17,16 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.use(bodyParser.json());
+
 app.use(session({
     secret: 'secret',
     resave: true,
     saveUninitialized: true
 }));
 
-app.use(bodyParser.json());
-
 app.use(express.static('src'));
+app.use('/images-load', express.static('images-load'));
 
 app.set('views', __dirname+'\\..\\views\\hbs');
 app.engine('.hbs', engine({
@@ -48,7 +49,15 @@ app.use('/', tasksRoutes);
 
 app.get('/', (req, res)=>{
     if(req.session.loggedin == true){
-        res.render('home', {name: req.session.name});
+        req.getConnection((err, conn)=>{
+            conn.query('SELECT * FROM evento', (err, evento)=>{
+                if(err){
+                    res.json(err);
+                }
+                console.log(evento);
+                res.render('home', {evento, name: req.session.name});
+            });
+        });
     } else{
         res.redirect('/login');
     }
@@ -59,7 +68,16 @@ app.use('/', loginRoutes);
 
 //Subir imagenes
 
-const upload = multer({dest: 'images-load/'});
+const upload = multer({dest: '/src/images'});
+
+/*app.post('/test', upload.fields([
+    {name: 'banner', maxCount: 1},
+    {name: 'gallery', maxCount: 6}
+]), (req,res) =>{
+    saveImage(req.files['banner'][0]);
+    req.files['gallery'].map(saveImage);
+    res.send('Termina')
+});*/
 
 app.post('/succesfull', upload.single('banner'),(req, res)=>{
     console.log(req.file);
@@ -67,12 +85,13 @@ app.post('/succesfull', upload.single('banner'),(req, res)=>{
     res.send('Termina');
 });
 
-app.post('/form', upload.array('imagenes', 6),(req, res)=>{
+/*app.post('/succesfull', upload.array('imagenes', 6),(req, res)=>{
     req.files.map(saveImage);
     res.send('TerminaMulti');
-});
+});*/
 function saveImage(file){
-    const newPath = './images-load/'+file.originalname;
+    const  newPath= './images-load/'+file.originalname;
     fs.renameSync(file.path, newPath);
+    console.log(newPath);
     return newPath;
 }

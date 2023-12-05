@@ -10,6 +10,9 @@
     <nav class="navbar navbar-expand-lg d-fex  align-items-cennter container-fluid  align-items-cennter">
         <ul class="navbar-nav container-fluid my-3">
             <li><img src="/img/icons/icon-eventr.png" alt="eventr" height="65" class="d-inline-block align-text-top"></li>
+            {{#if email}}
+                <li>{{email}}</li>
+            {{/if}}
                 <li class="content-right"><span>Inicio</span></li>
                 <li><span>Acerca de</span></li>
                 <li><span>Servicios</span></li>
@@ -17,15 +20,15 @@
                 <li><button class="btn-form-login btn">Iniciar Sesión</button></li>
         </ul>
     </nav>
-    <form action="http://localhost:4000/form" method="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
         <article class="row">
             <div class="col-lg-5">
                 <label class="form-label">Nombre del evento:</label>
-                <input type="text" class="form-control" name="nombreEvento" pattern="[A-Za-z]+" required>
+                <input type="text" class="form-control" name="nombreEvento" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" required>
                 <label class="form-label">Descripción del evento:</label>
-                <input type="text" class="form-control decr-event" name="descripcionEvento" required>
+                <textarea type="text" class="form-control decr-event" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" name="descripcionEvento" required maxlength="500" size="50"></textarea>
                 <label class="form-label">Tipo del evento:</label>
-                 <select class="form-control" id="exampleFormControlSelect1" name="tipoEvento">
+                 <select class="form-control" id="exampleFormControlSelect1" name="tipo">
                     <option value="Cultural">Cultural</option>
                     <option value="Deportivo">Deportivo</option>
                     <option value="Artistico">Artístico</option>
@@ -48,40 +51,40 @@
                     </div>
                 </div>
                 <label class="form-label">Ubicación:</label>
-                <input type="text" class="form-control" name="ubicacion" required>
+                <input type="text" class="form-control" name="ubicacion" pattern="-?\d+(\.\d+)?,-?\d+(\.\d+)?" placeholder="(latitud), (longitud)" required>
             </div>
             <div class="col-lg-5">
                 <label class="form-label">Organizador/Entidad Responsable:</label>
-                <input type="text" class="form-control"  name="nombre" pattern="[A-Za-z]+"required>
-                <!--<label class="form-label me-5">Banner del evento:</label>
-                <input type="file" class=""   name="banner" required> <br>-->
+                <input type="text" class="form-control"  name="nombre" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" required>
+                <label class="form-label me-5">Banner del evento:</label>
+                <input type="file" class=""   name="banner" required> <br>
                 <label class="form-label me-4">Imagenes del evento:</label>
-                <input type="file" class=""   name="imagenes" multiple="true" required>
+                <input type="file" class=""   name="gallery" multiple="true" required>-
                 <h4 class="mt-4">Información de entradas</h4>
                 <div class="container">
                     <div class="row">
                         <div class="col-5">
                             <label class="form-label">Categoria:</label>
-                            <input type="text" class="form-control" name="categoria" pattern="[A-Za-z]+"required>
+                            <input type="text" class="form-control" name="categoria" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" required>
                         </div>
                         <div class="col-5">
                             <label class="form-label">Precio:</label>
-                            <input type="decimal" class="form-control" name="precio" required>
+                            <input type="number" class="form-control" name="precio" step="0.01" required>
                         </div>
                         <div class="col-5">
                             <label class="form-label">Capacidad:</label>
-                            <input type="number" class="form-control" name="cantidad" required>
+                            <input type="number" class="form-control" name="cantidad"step="1" oninput="this.value = Math.round(this.value);" required>
                         </div>
                         <div class="col-5">
                             <label class="form-label">Zona:</label>
-                            <input type="text" class="form-control" name="zona" required>
+                            <input type="text" class="form-control" name="zona" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" required>
                         </div>
                     </div>
                 </div>
                 <label class="form-label">Requisitos especiales:</label>
-                <input type="text" class="form-control" name="requisitose" pattern="[A-Za-z]+"required>
+                <input type="text" class="form-control" name="requisitose" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" required>
                 <label class="form-label">Enlaces a Redes Sociales o Sitio Web:</label>
-                <input type="text" class="form-control" name="enlaces" required> 
+                <input type="" class="form-control" name="enlaces" required> 
             </div>
             <button class="col-lg-5 mt-4 btn btn-primary" type="submit">Listo!</button>
         </article>

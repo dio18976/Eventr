@@ -7,5 +7,10 @@ function showSection(id) {
 
     // Mostrar la sección seleccionada
     document.getElementById(id).style.display = 'block';
-    document.getElementById(id + '-button').classList.add('selected');
+}
+
+function backgroundBanner(pathBanner){
+    var bannerElement = document.getElementById('banner');
+    console.log(pathBanner);
+    bannerElement.style.backgroundImage = `url(${pathBanner})`;
 }

@@ -40,6 +40,11 @@ a{
     height: 263px;
     box-shadow: .5px .5px 10px 5px rgb(197, 197, 197);
 }
+.card-body p{margin: 0.75rem 0 0 1.5rem;}
+.card-text{
+    font-size: large;
+    font-weight: bold;
+}
 .form-control{
     display: inline-block;
     width: 100%;
@@ -73,6 +78,11 @@ a{
     border: none;
     font-weight: bold;
     font-size: 1rem;
+}
+.searcher{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .login-icons{
     margin-top: 3rem;

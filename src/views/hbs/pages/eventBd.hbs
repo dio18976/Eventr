@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         {{#each event}}<title>{{nombreEvento}}</title>{{/each}}
+        <link rel="stylesheet" href="/css/style-event.css">
+        <script src="/js/displayElement.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="banner col-12" id="banner" style="background-image: url(../{{pathBanner}})">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary" background-color="rgb(78, 11, 46)">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                    <img src=".././img/icon 1.png" alt="Eventr" width="45" height="40">
+                    </a>
+                    <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex navbar-brand" role="search">
+                        <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        {{#if name}}
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/logout">Cerrar sesion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/form">Formulario</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">{{name}}</a>
+                            </li>
+                        {{else}}
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/login">Iniciar sesion</a>
+                            </li>
+                        {{/if}}
+                        </ul>
+                        <div>
+                            <img src="../img/cat.jpg" alt="" width="45" height="40" class="imguser">
+                        </div>
+                    </div>
+                    </div>
+                </nav>
+                <div class="event-title">
+                    <div class="title-banner">
+                        {{#each event}}<p>{{nombreEvento}}</p>{{/each}}
+                    </div>
+                    <div class="info-banner">
+                        <p>{{month}} {{day}}/Lugar</p>
+                    </div>
+                </div>
+            
+            </div>
+        </header>
+        <div class="nav-info row">
+            <div class="head-land col-2 event">
+                <button value="event" id="event-info-button"  onclick="showSection('event-info')">Evento</button>
+            </div>
+            <div class="head-land col-2 galery">
+                <button value="galery"  id="gallery-info-button"  onclick="showSection('gallery-info')">Galeria</span>
+            </div>
+            <div class="head-land col-2 located">
+                <button value="located"  id="location-event-button"  onclick="showSection('location-event')">Ubicación</button>
+            </div>
+            <div class="head-land col-2 detail">
+                <button value="detail"   id="detail-event-button"  onclick="showSection('detail-event')">Detalles</button>
+            </div>
+        </div>
+        <div class="event-info col-lg-8" id="event-info" style="display: block;">
+            <p><b>1</b> próximo Evento(s)</p>
+            <div class="button-date">
+                <button type="submit" class="btn btn-light">{{date}}</button>
+            </div>
+            {{#each event}}<h1>{{nombreEvento}}</h1>{{/each}}
+            <div class="date-hour row">
+                <div class="col-2" align="center">
+                    <div>{{abrMont}}</div>
+                    <div><h2>{{day}}</h2></div>
+                </div>
+                <div class="col-10">
+                    <div class="day-hour">
+                        {{#each event}}<b>{{weekDay}} {{/each}} {{time}} hrs</b>
+                    </div>
+                    {{#each event}}
+                    <div class="comment">
+                        {{nombreEvento}}, {{requisitose}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="button-ticket">
+                <button type="submit" class="btn btn-primary">Conseguir Boleto ></button>
+            </div>
+        </div>
+        
+        <div class="gallery-info" id="gallery-info"  style="display: none;">
+            <div class="row">
+            {{#each gallery}}
+                <div class="col-4 px-2 section-pic">
+                    <img src="../{{picPath}}" class="gallery-pic" alt="picture1" width="100%">
+                </div>
+            {{/each}}
+            </div>
+        </div>
+        {{#each event}}        
+        <div class="location-event" id="location-event"  style="display: none;">
+           <h6>{{ubicacion}}</h6>
+        </div>
+        {{/each}} 
+
+        <div class="detail-event" id="detail-event"  style="display: none;">
+        {{#each event}}
+            <div><h2>{{nombreEvento}}</h2></div>
+            <div class="text-detail">
+                {{descripcion}}
+            </div>
+        {{/each}}
+        </div>
+    </body>
+
+    
+</html>
